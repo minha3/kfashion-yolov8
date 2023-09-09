@@ -20,22 +20,22 @@ cd kfashion-yolov8
 pip install -r requirements.txt
 ```
 
-## Training
-
-To run the `main.py` script, you should follow these steps:
+## Pre-training Preparation
 
 1. **KFashion DataSet Preparation**: Ensure that the downloaded KFashion dataset is placed in the `/opt/dataset/kfashion` directory.
-
-2. **Execution of main.py**: When you run the `main.py` script, a necessary YAML file for training will be generated in the `$HOME/dataset/kfashion` directory, named as `kfashion.yaml`.
-
-3. **Model Training**: Use the `kfashion.yaml` file to start the training process.
-
-4. **Output**: Once the training completes, the outputs will be stored in the `runs/detect` folder inside the project directory.
-
-To train the model, use the following command:
+2. **Generate Training YAML**: Execute the command below. It will create a `kfashion.yaml` file inside the `$HOME/dataset/kfashion` directory, which is required for training.
 
 ```bash
-python main.py
+python main.py --prepare
+```
+
+## Training
+
+1. **Model Training**: By executing the following command, the model will be trained using the `$HOME/dataset/kfashion/kfashion.yaml`.
+2. **Output**: Once the training completes, the outputs will be stored in the `runs/detect` folder inside the project directory.
+
+```bash
+python main.py --train
 ```
 
 ## Results
